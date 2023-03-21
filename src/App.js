@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import FirstAssignment from "./components/first-assignment/FirstAssignment";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import SecondAssignment from "./components/second-assignment/SecondAssignment";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path="/" element={<FirstAssignment />} />
+        <Route path="/first-assignment" element={<FirstAssignment />} />
+        <Route path="/second-assignment" element={<SecondAssignment />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
